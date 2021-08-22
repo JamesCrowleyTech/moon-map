@@ -5,6 +5,7 @@ export default function Home() {
     return (
         <div className="home">
             <section className="hero">
+                <div className="hero-image"></div>
                 <div className="hero-text">
                     <h1 className="hero-title">Moon Map</h1>
                     <p className="hero-paragraph">
