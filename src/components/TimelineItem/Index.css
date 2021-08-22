@@ -1,0 +1,44 @@
+.timeline-item {
+    width: 40rem;
+    height: 16rem;
+    background-color: thistle;
+    overflow: hidden;
+    border-radius: 100rem;
+    padding: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid gray;
+    position: absolute;
+    transform: translate(0, -50%);
+}
+
+.timeline-item-image-container {
+    width: 11.2rem;
+    height: 11.2rem;
+    border-radius: 100rem;
+    overflow: hidden;
+}
+
+.timeline-item-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.timeline-item-text {
+    color: whitesmoke;
+    width: 65%;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.timeline-item-title {
+    font-size: 1.7rem;
+}
+
+.timeline-item-description {
+    font-size: 1.3rem;
+}

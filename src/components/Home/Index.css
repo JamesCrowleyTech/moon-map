@@ -51,3 +51,18 @@
     background-color: rgb(201, 16, 53);
     cursor: pointer;
 }
+
+.timeline {
+    background-color: #181818;
+    border-top: 1px solid whitesmoke;
+    color: whitesmoke;
+
+    padding: 3rem;
+}
+
+.timeline-title {
+    font-size: calc(1.7rem + 0.9vw);
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+}
