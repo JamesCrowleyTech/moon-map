@@ -4,8 +4,6 @@ import TimelineItem from "../TimelineItem/Index";
 import image_moon from "../../images/moon-image.png";
 import image_moon_impact from "../../images/moon-impact.jpg";
 
-const people = [0, 0, 0, 0, 0, 0];
-
 export default function Timeline() {
     return (
         <section className="timeline">
@@ -17,6 +15,7 @@ export default function Timeline() {
                             <img
                                 className="timeline-main-moon"
                                 src={image_moon}
+                                alt=""
                                 style={{
                                     top: `${10 + i * 20}rem`,
                                 }}
@@ -28,6 +27,7 @@ export default function Timeline() {
                                 style={{
                                     top: `${13 + i * 20}rem`,
                                 }}
+                                id={i}
                             />
                         </>
                     );

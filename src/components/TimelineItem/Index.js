@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Index.css";
 
-export default function TimelineItem({ image, title, description, style }) {
-    return (
-        <div className="timeline-item" style={style}>
+export default function TimelineItem({ image, title, description, style, id }) {
+    let element = (
+        <div
+            className="timeline-item"
+            style={style}
+            id={`timeline-item--${id}`}
+        >
             <div className="timeline-item-image-container">
                 <img src={image} className="timeline-item-image" alt=""></img>
             </div>
@@ -13,4 +17,23 @@ export default function TimelineItem({ image, title, description, style }) {
             </div>
         </div>
     );
+
+    useEffect(function () {
+        const el = document.getElementById(`timeline-item--${id}`);
+        const observer = new IntersectionObserver(
+            function (entries) {
+                const [entry] = entries;
+                if (entry.isIntersecting) el.style.backgroundColor = "red";
+            },
+            {
+                root: null,
+                threshold: 0,
+                rootMargin: "0px",
+            }
+        );
+
+        observer.observe(el);
+    });
+
+    return element;
 }
