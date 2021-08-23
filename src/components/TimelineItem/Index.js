@@ -4,7 +4,11 @@ import "./Index.css";
 export default function TimelineItem({ image, title, description, style, id }) {
     let element = (
         <div
-            className="timeline-item"
+            className={`timeline-item ${
+                id % 2
+                    ? "timeline-item--right-unscrolled"
+                    : "timeline-item--left-unscrolled"
+            }`}
             style={style}
             id={`timeline-item--${id}`}
         >
@@ -23,7 +27,22 @@ export default function TimelineItem({ image, title, description, style, id }) {
         const observer = new IntersectionObserver(
             function (entries) {
                 const [entry] = entries;
-                if (entry.isIntersecting) el.style.backgroundColor = "red";
+                setTimeout(function () {
+                    if (
+                        entry.isIntersecting &&
+                        el.classList.contains("timeline-item--right-unscrolled")
+                    ) {
+                        el.classList.remove("timeline-item--right-unscrolled");
+                        el.classList.add("timeline-item--right-scrolled");
+                    }
+                    if (
+                        entry.isIntersecting &&
+                        el.classList.contains("timeline-item--left-unscrolled")
+                    ) {
+                        el.classList.remove("timeline-item--left-unscrolled");
+                        el.classList.add("timeline-item--left-scrolled");
+                    }
+                }, 0);
             },
             {
                 root: null,

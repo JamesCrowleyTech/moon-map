@@ -1,16 +1,17 @@
 .timeline-item {
-    width: 40rem;
-    height: 16rem;
-    background-color: thistle;
-    overflow: hidden;
+    width: 41rem;
+    height: 17rem;
+    background-color: gray;
+
     border-radius: 100rem;
     padding: 2.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 3px solid gray;
+    border: 3px solid red;
     position: absolute;
     transform: translate(0, -50%);
+    transition: all 0.4s;
 }
 
 .timeline-item-image-container {
@@ -28,11 +29,11 @@
 
 .timeline-item-text {
     color: whitesmoke;
-    width: 65%;
+    width: 63%;
     height: 11rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .timeline-item-title {
@@ -41,4 +42,20 @@
 
 .timeline-item-description {
     font-size: 1.3rem;
+}
+
+.timeline-item--left-unscrolled {
+    right: 100%;
+}
+
+.timeline-item--left-scrolled {
+    right: 53%;
+}
+
+.timeline-item--right-unscrolled {
+    left: 100%;
+}
+
+.timeline-item--right-scrolled {
+    left: 53%;
 }
