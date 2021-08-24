@@ -11,7 +11,7 @@
     border: 3px solid red;
     position: absolute;
     transform: translate(0, -50%);
-    transition: all 0.4s;
+    transition: all 0.6s ease-out;
 }
 
 .timeline-item-image-container {

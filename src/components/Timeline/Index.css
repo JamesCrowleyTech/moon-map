@@ -33,7 +33,7 @@
     height: 100%;
 }
 
-.timeline-main-moon-container:not(:nth-last-of-type(2))::after {
+.timeline-main-moon-container:not(:last-child)::after {
     content: "";
     display: block;
     height: 20rem;

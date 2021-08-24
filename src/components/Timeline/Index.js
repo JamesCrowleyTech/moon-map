@@ -1,11 +1,13 @@
 import React from "react";
 import "./Index.css";
 import TimelineItem from "../TimelineItem/Index";
+import TimelineYear from "../TimelineYear/Index";
 import image_moon from "../../images/moon-image.png";
 import image_moon_impact from "../../images/moon-impact.jpg";
 import image_luna_satellite from "../../images/luna-satellite.jpeg";
 import image_men_on_moon from "../../images/men_on_moon.jpg";
 import image_galileo_telescope from "../../images/galileo-telescope.jpg";
+import image_apollo_17_crew from "../../images/apollo17_crew.jpg";
 
 console.log(image_moon_impact);
 
@@ -39,17 +41,22 @@ export default function Timeline() {
             description:
                 "Commander Neil Armstrong and Buzz Aldrin formed the American crew that landed the Apollo 11 spaceflight on the Moon, July 20, 1969.",
         },
+        {
+            year: "1972",
+            title: "Last Crewed Moon Mission",
+            img: image_apollo_17_crew,
+            description:
+                "The Apollo 17 flight, captained by Gene Cernan, is the last flight in a half century to land humans on the moon. The Apollo program was shut down in 1975.",
+        },
     ];
 
     return (
         <section className="timeline">
             <h2 className="timeline-title">Timeline Of The Moon</h2>
             <div className="timeline-main">
-                {Array.apply(null, Array(8)).map(function (_, i) {
-                    const data = timelineItemData[i] || timelineItemData[0];
-
-                    return (
-                        <>
+                <div className="timeline-main-moons-container">
+                    {Array.apply(null, Array(5)).map(function (_, i) {
+                        return (
                             <div
                                 className="timeline-main-moon-container"
                                 style={{
@@ -62,6 +69,14 @@ export default function Timeline() {
                                     alt=""
                                 ></img>
                             </div>
+                        );
+                    })}
+                </div>
+                <div className="timeline-main-items-container">
+                    {Array.apply(null, Array(5)).map(function (_, i) {
+                        const data = timelineItemData[i] || timelineItemData[0];
+
+                        return (
                             <TimelineItem
                                 image={data.img}
                                 title={data.title}
@@ -71,9 +86,22 @@ export default function Timeline() {
                                 }}
                                 id={i}
                             />
-                        </>
-                    );
-                })}
+                        );
+                    })}
+                </div>
+                <div className="timeline-main-years-container">
+                    {Array.apply(null, Array(5)).map(function (_, i) {
+                        return (
+                            <TimelineYear
+                                text={timelineItemData[i].year}
+                                style={{
+                                    top: `${13 + i * 20}rem`,
+                                }}
+                                id={i}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );
