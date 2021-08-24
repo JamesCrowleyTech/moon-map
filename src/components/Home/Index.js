@@ -2,7 +2,6 @@ import React from "react";
 import "./Index.css";
 import Timeline from "../Timeline/Index";
 // eslint-disable-next-line
-import image_moon_round from "../../images/moon-image.png";
 
 export default function Home() {
     return (
@@ -20,7 +19,6 @@ export default function Home() {
                 </div>
             </section>
             <Timeline />
-            {/* <img src={moon}></img> */}
         </div>
     );
 }

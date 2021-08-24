@@ -14,7 +14,7 @@ console.log(image_moon_impact);
 export default function Timeline() {
     const timelineItemData = [
         {
-            year: "4.5 bya",
+            year: "4.5 billion years ago",
             title: "The Moon Is Formed",
             img: image_moon_impact,
             description:
@@ -50,12 +50,17 @@ export default function Timeline() {
         },
     ];
 
+    const numberOfItems = 5;
+
     return (
         <section className="timeline">
             <h2 className="timeline-title">Timeline Of The Moon</h2>
             <div className="timeline-main">
                 <div className="timeline-main-moons-container">
-                    {Array.apply(null, Array(5)).map(function (_, i) {
+                    {Array.apply(null, Array(numberOfItems)).map(function (
+                        _,
+                        i
+                    ) {
                         return (
                             <div
                                 className="timeline-main-moon-container"
@@ -73,7 +78,10 @@ export default function Timeline() {
                     })}
                 </div>
                 <div className="timeline-main-items-container">
-                    {Array.apply(null, Array(5)).map(function (_, i) {
+                    {Array.apply(null, Array(numberOfItems)).map(function (
+                        _,
+                        i
+                    ) {
                         const data = timelineItemData[i] || timelineItemData[0];
 
                         return (
@@ -90,10 +98,13 @@ export default function Timeline() {
                     })}
                 </div>
                 <div className="timeline-main-years-container">
-                    {Array.apply(null, Array(5)).map(function (_, i) {
+                    {Array.apply(null, Array(numberOfItems)).map(function (
+                        _,
+                        i
+                    ) {
                         return (
                             <TimelineYear
-                                text={timelineItemData[i].year}
+                                text={timelineItemData[i]?.year}
                                 style={{
                                     top: `${13 + i * 20}rem`,
                                 }}

@@ -21,6 +21,7 @@
     margin: 0 1.2rem;
     border-radius: 100rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navbar-list-item-danger {
